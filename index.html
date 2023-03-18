@@ -17,8 +17,6 @@
         <a href="https://unsplash.com/" class="italic" target="_blank">Unsplash</a></span>
     </div>
 
-
-
     <div class="right">
         <div class="header">
             <span> This is not a real online service! You know you need something<br> like this in your life to help you realize your deepest dreams. <br>
@@ -31,48 +29,53 @@
         </div>
 
         <div class="content">
-            <form action="post" class = 'sign-up' action="./" id = 'submit-form'>
+            <form action="post" class = 'sign-up' id = 'submit-form' novalidate>
                 <span>Let's do this!</span>
 
                 <div class="names">
-                    <div>
+                    <div class = 'input-field'>
                         <label for="first-name">FIRST NAME</label>
-                        <input type="text" id="first-name" name="first-name" placeholder="John" required>
-                        <span class ='error'>Error Message</span>
+                        <input type="text" id="first-name" name="first-name" placeholder="John" required 
+                        pattern = '[A-Za-z]+(-[a-z]+)?' minlength = 2>
+                        <span class ='error'><img src="./img/error-icon.jpg" alt="error"> Only characters and a hyphon inbetween is allowed!</span>
                     </div>
-                    <div>
+                    <div class = 'input-field'>
                         <label for="last-name">LAST NAME</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
-                        <span class ='error'>Error Message</span>
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" required
+                        pattern = '[A-Za-z]+(-[a-z]+)?' minlength = 2>
+                        <span class ='error'><img src="./img/error-icon.jpg" alt="error"> Only characters and a hyphon inbetween is allowed!</span>
                     </div>
                 </div>
 
                 <div class="information">
-                    <div>
+                    <div class = 'input-field'>
                         <label for="email">EMAIL</label>
                         <input type="email" id="email" name="email" placeholder="JohnDoe@yahoo.com">
-                        <span class ='error'>Error Message</span>
+                        <span class ='error'><img src="./img/error-icon.jpg" alt="error"> Invalid email!</span>
                     </div>
                     
-                    <div>
+                    <div class = 'input-field'>
                         <label for="phone-number">PHONE NUMBER</label>
-                        <input type="number" id="phone-number" name="phone-number" placeholder="80085">
-                        <span class ='error'>Error Message</span>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="80085"
+                        pattern = '[0-9]+(-[0-9]+)*' minlength = 3>
+                        <span class ='error'><img src="./img/error-icon.jpg" alt="error"> At least three numbers and optional hyphons!</span>
                     </div>
                     
                 </div>
 
                 <div class="passwords">
-                    <div>
+                    <div class = 'input-field'>
                         <label for="password">PASSWORD</label>
-                        <input type="text" id="password" name="password" required>
-                        <span class ='error'>Error Message</span>
+                        <input type="password" id="password" name="password" required
+                        pattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#_,.])[A-Za-z\d@$!%*?&#_,.]{8,}$' minlength = 3>
+                        <span class ='error'><img src="./img/error-icon.jpg" alt="error"> Must contain big and small letter, number, symbol!</span>
+<!--                         "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" -->
                     </div>
                     
-                    <div>
+                    <div class = 'input-field'>
                         <label for="password-confirm">CONFIRM PASSWORD</label>
-                        <input type="text" id="password-confirm" name="password-confirm" required>
-                        <span class ='error'>Error Message</span>
+                        <input type="password" id="password-confirm" name="password-confirm" required>
+                        <span class ='error'><img src="./img/error-icon.jpg" alt="error"> Passwords do not match!</span>
                     </div>
                     
                 </div>
